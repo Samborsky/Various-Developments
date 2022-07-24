@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC20D1B72885460A008F249C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20D1B62885460A008F249C /* BirthdayViewController.swift */; };
+		AC20D1B928854D23008F249C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20D1B828854D23008F249C /* ProfileViewController.swift */; };
+		AC20D1BB28855769008F249C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20D1BA28855769008F249C /* Model.swift */; };
 		ACB15AB72875FB8000C5C51C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB15AB62875FB8000C5C51C /* AppDelegate.swift */; };
 		ACB15AB92875FB8000C5C51C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB15AB82875FB8000C5C51C /* SceneDelegate.swift */; };
 		ACB15ABB2875FB8000C5C51C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB15ABA2875FB8000C5C51C /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC20D1B62885460A008F249C /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		AC20D1B828854D23008F249C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AC20D1BA28855769008F249C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ACB15AB32875FB8000C5C51C /* theSwiftDeveloperHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theSwiftDeveloperHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB15AB62875FB8000C5C51C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB15AB82875FB8000C5C51C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 				ACB15AB82875FB8000C5C51C /* SceneDelegate.swift */,
 				ACB15ABA2875FB8000C5C51C /* ViewController.swift */,
 				ACB15ABC2875FB8000C5C51C /* Main.storyboard */,
+				AC20D1B828854D23008F249C /* ProfileViewController.swift */,
+				AC20D1BA28855769008F249C /* Model.swift */,
+				AC20D1B62885460A008F249C /* BirthdayViewController.swift */,
 				ACB15ABF2875FB8700C5C51C /* Assets.xcassets */,
 				ACB15AC12875FB8700C5C51C /* LaunchScreen.storyboard */,
 				ACB15AC42875FB8700C5C51C /* Info.plist */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB15ABB2875FB8000C5C51C /* ViewController.swift in Sources */,
+				AC20D1B72885460A008F249C /* BirthdayViewController.swift in Sources */,
+				AC20D1B928854D23008F249C /* ProfileViewController.swift in Sources */,
+				AC20D1BB28855769008F249C /* Model.swift in Sources */,
 				ACB15AB72875FB8000C5C51C /* AppDelegate.swift in Sources */,
 				ACB15AB92875FB8000C5C51C /* SceneDelegate.swift in Sources */,
 			);
