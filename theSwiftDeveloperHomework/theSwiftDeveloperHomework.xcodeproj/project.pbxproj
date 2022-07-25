@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACA1104D288D9B1F00E2E752 /* GoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1104C288D9B1F00E2E752 /* GoodsViewController.swift */; };
+		ACA1104F288DA3F100E2E752 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1104E288DA3F100E2E752 /* Model.swift */; };
 		ACB15AB72875FB8000C5C51C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB15AB62875FB8000C5C51C /* AppDelegate.swift */; };
 		ACB15AB92875FB8000C5C51C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB15AB82875FB8000C5C51C /* SceneDelegate.swift */; };
 		ACB15ABB2875FB8000C5C51C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB15ABA2875FB8000C5C51C /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ACA1104C288D9B1F00E2E752 /* GoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsViewController.swift; sourceTree = "<group>"; };
+		ACA1104E288DA3F100E2E752 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ACB15AB32875FB8000C5C51C /* theSwiftDeveloperHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theSwiftDeveloperHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB15AB62875FB8000C5C51C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB15AB82875FB8000C5C51C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +63,9 @@
 				ACB15AB62875FB8000C5C51C /* AppDelegate.swift */,
 				ACB15AB82875FB8000C5C51C /* SceneDelegate.swift */,
 				ACB15ABA2875FB8000C5C51C /* ViewController.swift */,
+				ACA1104E288DA3F100E2E752 /* Model.swift */,
 				ACB15ABC2875FB8000C5C51C /* Main.storyboard */,
+				ACA1104C288D9B1F00E2E752 /* GoodsViewController.swift */,
 				ACB15ABF2875FB8700C5C51C /* Assets.xcassets */,
 				ACB15AC12875FB8700C5C51C /* LaunchScreen.storyboard */,
 				ACB15AC42875FB8700C5C51C /* Info.plist */,
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA1104F288DA3F100E2E752 /* Model.swift in Sources */,
 				ACB15ABB2875FB8000C5C51C /* ViewController.swift in Sources */,
 				ACB15AB72875FB8000C5C51C /* AppDelegate.swift in Sources */,
 				ACB15AB92875FB8000C5C51C /* SceneDelegate.swift in Sources */,
+				ACA1104D288D9B1F00E2E752 /* GoodsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
