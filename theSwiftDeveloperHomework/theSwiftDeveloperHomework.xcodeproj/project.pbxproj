@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC573033288F210E00E90C54 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC573032288F210E00E90C54 /* CartViewController.swift */; };
 		ACA1104D288D9B1F00E2E752 /* GoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1104C288D9B1F00E2E752 /* GoodsViewController.swift */; };
 		ACA1104F288DA3F100E2E752 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1104E288DA3F100E2E752 /* Model.swift */; };
 		ACB15AB72875FB8000C5C51C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB15AB62875FB8000C5C51C /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC573032288F210E00E90C54 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		ACA1104C288D9B1F00E2E752 /* GoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsViewController.swift; sourceTree = "<group>"; };
 		ACA1104E288DA3F100E2E752 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ACB15AB32875FB8000C5C51C /* theSwiftDeveloperHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theSwiftDeveloperHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,9 +65,10 @@
 				ACB15AB62875FB8000C5C51C /* AppDelegate.swift */,
 				ACB15AB82875FB8000C5C51C /* SceneDelegate.swift */,
 				ACB15ABA2875FB8000C5C51C /* ViewController.swift */,
-				ACA1104E288DA3F100E2E752 /* Model.swift */,
-				ACB15ABC2875FB8000C5C51C /* Main.storyboard */,
 				ACA1104C288D9B1F00E2E752 /* GoodsViewController.swift */,
+				ACB15ABC2875FB8000C5C51C /* Main.storyboard */,
+				AC573032288F210E00E90C54 /* CartViewController.swift */,
+				ACA1104E288DA3F100E2E752 /* Model.swift */,
 				ACB15ABF2875FB8700C5C51C /* Assets.xcassets */,
 				ACB15AC12875FB8700C5C51C /* LaunchScreen.storyboard */,
 				ACB15AC42875FB8700C5C51C /* Info.plist */,
@@ -148,6 +151,7 @@
 				ACB15ABB2875FB8000C5C51C /* ViewController.swift in Sources */,
 				ACB15AB72875FB8000C5C51C /* AppDelegate.swift in Sources */,
 				ACB15AB92875FB8000C5C51C /* SceneDelegate.swift in Sources */,
+				AC573033288F210E00E90C54 /* CartViewController.swift in Sources */,
 				ACA1104D288D9B1F00E2E752 /* GoodsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

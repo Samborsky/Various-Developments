@@ -34,6 +34,7 @@ class ViewController: UIViewController {
 //массив с товарами
     var goodsArray = [Goods]()
     
+//MARK: - жизненные циклы
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,25 +50,101 @@ class ViewController: UIViewController {
         createCategoriesLabels()
 
         fillGoods()
+        self.title = "Categories"
+
     }
+
+    //MARK: - методы
+
+    //метод передающий данные на GoodsViewController
+        func dataForNextVC(controller: GoodsViewController,imagesForArray: [UIImage], categoryLabel: String, itemsForSegment: [String], image: UIImage, priceLabel: String) {
+
+            controller.imagesArray = imagesForArray
+            controller.categoryLabel.text = categoryLabel
+            controller.categoryLabel.textAlignment = .center
+            controller.modalPresentationStyle = .fullScreen
+
+            controller.itemsForSegmentControll = itemsForSegment
+            controller.image.image = image
+            controller.priceLabel.text = priceLabel
+
+        }
+
+    //создаем и настраиваем картинки
+        func createImages(){
+            imageOne.frame = CGRect(x: 0, y: 88, width: 100, height: 100)
+            imageOne.image = UIImage(named: "lays salt")
+            self.view.addSubview(imageOne)
+
+            imageTwo.frame = CGRect(x: 0, y: 191, width: 100, height: 100)
+            imageTwo.image = UIImage(named: "cola classic")
+            self.view.addSubview(imageTwo)
+
+            imageThree.frame = CGRect(x: 0, y: 294, width: 100, height: 100)
+            imageThree.image = UIImage(named: "pork")
+            self.view.addSubview(imageThree)
+
+            imageFour.frame = CGRect(x: 0, y: 397, width: 100, height: 100)
+            imageFour.image = UIImage(named: "twix")
+            self.view.addSubview(imageFour)
+        }
+
+    //создаем и настраиваем лейблы
+        func createCategoriesLabels(){
+            categoryOne.frame = CGRect(x: 110, y: 110, width: 300, height: 50)
+            categoryOne.text = "Snacks"
+            self.view.addSubview(categoryOne)
+
+            categoryTwo.frame = CGRect(x: 110, y: 215, width: 300, height: 50)
+            categoryTwo.text = "Drinks"
+            self.view.addSubview(categoryTwo)
+
+            categoryThree.frame = CGRect(x: 110, y: 320, width: 300, height: 50)
+            categoryThree.text = "Meat and fish"
+            self.view.addSubview(categoryThree)
+
+            categoryFour.frame = CGRect(x: 110, y: 425, width: 300, height: 50)
+            categoryFour.text = "Candys"
+            self.view.addSubview(categoryFour)
+        }
+
+    //наполняем массив товаров
+        func fillGoods() {
+            goodsArray.append(productLaysOne)
+            goodsArray.append(productLaysTwo)
+            goodsArray.append(priductLaysThree)
+
+            goodsArray.append(productColaOne)
+            goodsArray.append(productColaTwo)
+
+            goodsArray.append(productMeatOne)
+            goodsArray.append(productMeatFish)
+            goodsArray.append(productMeatChiken)
+
+            goodsArray.append(productCandyMars)
+            goodsArray.append(productCandyTwix)
+            goodsArray.append(productCandySnickers)
+            goodsArray.append(productCandyBounty)
+        }
+
 //создаем и настраиваем view
     func createViews(){
-        viewOne.frame = CGRect(x: 0, y: 44, width: self.view.frame.width, height: 100)
+        viewOne.frame = CGRect(x: 0, y: 88, width: self.view.frame.width, height: 100)
         viewOne.backgroundColor = .systemBackground
         self.view.addSubview(viewOne)
 
-        viewTwo.frame = CGRect(x: 0, y: 147, width: self.view.frame.width, height: 100)
+        viewTwo.frame = CGRect(x: 0, y: 191, width: self.view.frame.width, height: 100)
         viewTwo.backgroundColor = .systemBackground
         self.view.addSubview(viewTwo)
 
-        viewThree.frame = CGRect(x: 0, y: 250, width: self.view.frame.width, height: 100)
+        viewThree.frame = CGRect(x: 0, y: 294, width: self.view.frame.width, height: 100)
         viewThree.backgroundColor = .systemBackground
         self.view.addSubview(viewThree)
 
-        viewFour.frame = CGRect(x: 0, y: 353, width: self.view.frame.width, height: 100)
-        viewFour.backgroundColor = .systemBackground
+        viewFour.frame = CGRect(x: 0, y: 397, width: self.view.frame.width, height: 100)
         self.view.addSubview(viewFour)
     }
+
 //рисуем линию под "ячейкой"
     func addLine(myView: UIView) {
         let line = CALayer()
@@ -78,141 +155,95 @@ class ViewController: UIViewController {
 
 //создаем кнопку и растягиваем на все вью
     func createButtons(){
-        buttonForViewOne.frame = CGRect(x: 0, y: 44, width: viewOne.frame.width, height: viewOne.frame.height)
+        buttonForViewOne.frame = CGRect(x: 0, y: 88, width: viewOne.frame.width, height: viewOne.frame.height)
         buttonForViewOne.backgroundColor = .clear
-//        buttonForViewOne.addTarget(self, action: #selector(testButton(button:)), for: .touchUpInside)
         self.view.addSubview(buttonForViewOne)
         buttonForViewOne.addTarget(self, action: #selector(goToNextView(target:)), for: .touchUpInside)
 
-        buttonForViewTwo.frame = CGRect(x: 0, y: 147, width: viewOne.frame.width, height: viewOne.frame.height)
+        buttonForViewTwo.frame = CGRect(x: 0, y: 191, width: viewOne.frame.width, height: viewOne.frame.height)
         buttonForViewTwo.backgroundColor = .clear
         self.view.addSubview(buttonForViewTwo)
+        buttonForViewTwo.addTarget(self, action: #selector(goToNextView2(target:)), for: .touchUpInside)
 
-        buttonForViewThree.frame = CGRect(x: 0, y: 250, width: viewOne.frame.width, height: viewOne.frame.height)
+
+        buttonForViewThree.frame = CGRect(x: 0, y: 294, width: viewOne.frame.width, height: viewOne.frame.height)
         buttonForViewThree.backgroundColor = .clear
         self.view.addSubview(buttonForViewThree)
+        buttonForViewThree.addTarget(self, action: #selector(goToNextView3(target:)), for: .touchUpInside)
 
-        buttonForViewFour.frame = CGRect(x: 0, y: 353, width: viewOne.frame.width, height: viewOne.frame.height)
+
+        buttonForViewFour.frame = CGRect(x: 0, y: 397, width: viewOne.frame.width, height: viewOne.frame.height)
         buttonForViewFour.backgroundColor = .clear
         self.view.addSubview(buttonForViewFour)
-    }
+        buttonForViewFour.addTarget(self, action: #selector(goToNextView4(target:)), for: .touchUpInside)
 
+    }
+    //MARK: - селектор методы для кнопок
+
+//кнопка 1
     @objc func goToNextView(target: UIButton){
         print("button 1")
 let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let secondViewController = storyboard.instantiateViewController(withIdentifier: "GoodsViewController") as? GoodsViewController else {return}
-//        secondViewController.imagesArray.append(goodsArray[0].image)
-//        secondViewController.imagesArray.append(goodsArray[1].image)
-//        secondViewController.imagesArray.append(goodsArray[2].image)
+
+        dataForNextVC(controller: secondViewController,
+                      imagesForArray: [goodsArray[0].image, goodsArray[1].image, goodsArray[2].image], categoryLabel: "Snacks",
+                      itemsForSegment: [goodsArray[0].productName, goodsArray[1].productName, goodsArray[2].productName],
+                      image: goodsArray[0].image,
+                      priceLabel: "\(goodsArray[0].price)$")
         secondViewController.categoryID = 0
-        secondViewController.categoryLabel.text = "Snacks"
-        secondViewController.categoryLabel.textAlignment = .center
-        secondViewController.modalPresentationStyle = .fullScreen
-        secondViewController.descriptionLabel.textAlignment = .left
-//        secondViewController.descriptionLabel.numberOfLines = 10
 
-
-        secondViewController.descriptionLabel.text = "Calories 160 Fat   10g  13%"
-
-//        Fat   10g  13%
-//        Saturated   1.5g  7%
-//        Trans   0g
-//        Cholesterol   0mg  0%
-//        Sodium   170mg  7%
-//        Carbohydrates   15g  6%
-//        Fiber   1g  5%
-//        Sugars   less than 1g
-//        Protein   2g
-//        Vitamin D   0mc  0%
-//        Vitamin C    6%
-//        Calcium   10mg  0%
-//        Iron   0.6mg  2%
-//        Potassium   350mg  6%
         show(secondViewController, sender: nil)
-
-
     }
 
-//создаем и настраиваем картинки
-    func createImages(){
-        imageOne.frame = CGRect(x: 0, y: 44, width: 100, height: 100)
-        imageOne.image = UIImage(named: "lays salt")
-        self.view.addSubview(imageOne)
+//кнопка 2
+    @objc func goToNextView2(target: UIButton){
+        print("button 2")
+let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let secondViewController = storyboard.instantiateViewController(withIdentifier: "GoodsViewController") as? GoodsViewController else {return}
 
-        imageTwo.frame = CGRect(x: 0, y: 147, width: 100, height: 100)
-        imageTwo.image = UIImage(named: "cola classic")
-        self.view.addSubview(imageTwo)
+        dataForNextVC(controller: secondViewController,
+                      imagesForArray: [goodsArray[3].image, goodsArray[4].image],
+                                       categoryLabel: "Drinks",
+                      itemsForSegment: [goodsArray[3].productName, goodsArray[4].productName],
+                      image: goodsArray[3].image,
+                      priceLabel: "\(goodsArray[3].price)$")
+                secondViewController.categoryID = 1
 
-        imageThree.frame = CGRect(x: 0, y: 250, width: 100, height: 100)
-        imageThree.image = UIImage(named: "pork")
-        self.view.addSubview(imageThree)
+        show(secondViewController, sender: nil)
+    }
+//кнопка 3
+    @objc func goToNextView3(target: UIButton){
+        print("button 3")
+let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let secondViewController = storyboard.instantiateViewController(withIdentifier: "GoodsViewController") as? GoodsViewController else {return}
 
-        imageFour.frame = CGRect(x: 0, y: 353, width: 100, height: 100)
-        imageFour.image = UIImage(named: "twix")
-        self.view.addSubview(imageFour)
+        dataForNextVC(controller: secondViewController,
+                      imagesForArray: [goodsArray[5].image, goodsArray[6].image, goodsArray[7].image],
+                                       categoryLabel: "Meat and fish",
+                      itemsForSegment: [goodsArray[5].productName, goodsArray[6].productName, goodsArray[7].productName],
+                      image: goodsArray[5].image,
+                      priceLabel: "\(goodsArray[5].price)$")
+                secondViewController.categoryID = 2
+
+        show(secondViewController, sender: nil)
     }
 
-//создаем и настраиваем лейблы
-    func createCategoriesLabels(){
-        categoryOne.frame = CGRect(x: 110, y: 65, width: 300, height: 50)
-        categoryOne.text = "Snacks"
-        self.view.addSubview(categoryOne)
+    //кнопка 4
+        @objc func goToNextView4(target: UIButton){
+            print("button 4")
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let secondViewController = storyboard.instantiateViewController(withIdentifier: "GoodsViewController") as? GoodsViewController else {return}
 
-        categoryTwo.frame = CGRect(x: 110, y: 170, width: 300, height: 50)
-        categoryTwo.text = "Drinks"
-        self.view.addSubview(categoryTwo)
+            dataForNextVC(controller: secondViewController,
+                          imagesForArray: [goodsArray[8].image, goodsArray[9].image, goodsArray[10].image, goodsArray[11].image],
+                                           categoryLabel: "Candys",
+                          itemsForSegment: [goodsArray[8].productName, goodsArray[9].productName, goodsArray[10].productName, goodsArray[11].productName],
+                          image: goodsArray[8].image,
+                          priceLabel: "\(goodsArray[8].price)$")
+                    secondViewController.categoryID = 3
 
-        categoryThree.frame = CGRect(x: 110, y: 270, width: 300, height: 50)
-        categoryThree.text = "Meat and fish"
-        self.view.addSubview(categoryThree)
-
-        categoryFour.frame = CGRect(x: 110, y: 377, width: 300, height: 50)
-        categoryFour.text = "Candys"
-        self.view.addSubview(categoryFour)
-
-    }
-
-    @objc func testButton(button: UIButton) {
-        performSegue(withIdentifier: "fromListToGoodsViewController", sender: nil)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationVC = segue.destination as? GoodsViewController else {return}
-        switch destinationVC.categoryID {
-        case 0:
-            destinationVC.imagesArray.append(goodsArray[0].image)
-            destinationVC.imagesArray.append(goodsArray[1].image)
-            destinationVC.imagesArray.append(goodsArray[2].image)
-            destinationVC.categoryID = 0
-
-        case 1:
-            destinationVC.imagesArray.append(goodsArray[3].image)
-            destinationVC.imagesArray.append(goodsArray[4].image)
-            destinationVC.categoryID = 1
-        default: break
+            show(secondViewController, sender: nil)
         }
-    }
-    
-//наполняем массив товаров
-    func fillGoods() {
-        goodsArray.append(productColaOne)
-        goodsArray.append(productColaTwo)
-
-        goodsArray.append(productLaysOne)
-        goodsArray.append(productLaysTwo)
-        goodsArray.append(priductLaysThree)
-
-
-        goodsArray.append(productMeatOne)
-        goodsArray.append(productMeatFish)
-        goodsArray.append(productMeatChiken)
-
-        goodsArray.append(productCandyMars)
-        goodsArray.append(productCandyTwix)
-        goodsArray.append(productCandySnickers)
-        goodsArray.append(productCandyBounty)
-    }
-
-
 }
 
