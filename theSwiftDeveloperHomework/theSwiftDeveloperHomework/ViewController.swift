@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     //MARK: - аутлеты и переменные
     
+    
+    //массив с контактами
     private var contactsArray: [ContactProtocol] = [] {
         //вызываем обсервер(наблюдатель) который сортирует массив при обращении к нему
         didSet {
@@ -83,7 +85,24 @@ class ViewController: UIViewController {
                 alertVCTwo.addAction(action)
                 
                 self.present(alertVCTwo, animated: true, completion: nil)
-                
+//проверка, чтобы телефон был заполнен
+            } else if phoneNumber.text!.isEmpty {
+                let alertThree = UIAlertController(title: "Ошибка!",
+                                                   message: "Поле с номером телефона не может быть пустым",
+                                                   preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default)  { _ in
+                    //после ошибки поле становится красным, но через 2 секунды снова белым
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        phoneNumber.backgroundColor = .white
+                    }
+                    phoneNumber.backgroundColor = .red
+
+                    self.present(alertVC, animated: true, completion: nil)
+
+                }
+                alertThree.addAction(action)
+                self.present(alertThree, animated: true, completion: nil)
+//если всео ок, создаем контакт
             } else {
                 //добавляем в массив новый контакт
                 self.contactsArray.append(Contact(name: contactName.text ?? "", phone: phoneNumber.text ?? ""))
@@ -96,13 +115,7 @@ class ViewController: UIViewController {
         alertVC.addAction(actionOK)
         
         present(alertVC, animated: true, completion: nil)
-        
     }
-    
-    
-    
-    
-    
 }
 //MARK: - расширение ViewController UITableViewDelegate
 
@@ -128,14 +141,12 @@ print("swipe right")
 //кнопка изменить
         let renameAction = UIContextualAction(style: .normal, title: "rename") { _, _, _ in
             let alertcVc = UIAlertController(title: "Изменить", message: nil, preferredStyle: .alert)
-            
-            
+
             //присваиваем константе текстовое поле с именем и избавляем от опционала
        
             alertcVc.addTextField { textField in
                 textField.placeholder = "Введите новое имя"
-                
-                
+                        
             }
             alertcVc.addTextField { textField in
                 textField.placeholder = "Введите новый номер"

@@ -18,3 +18,6 @@ struct Contact: ContactProtocol {
     
     var phone: String
 }
+
+
+var userDefaults = UserDefaults.standard
